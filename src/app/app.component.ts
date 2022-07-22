@@ -10,11 +10,31 @@ import { FaceSnap } from './models/face-snap.model';
 export class AppComponent implements OnInit{
 
   mySnap!: FaceSnap;
+  mySnap1!: FaceSnap;
+  mySnap2!: FaceSnap;
   ngOnInit()
   {
     this.mySnap = new FaceSnap(
       'my snaps',
     'my descriptions',
+    'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+    new Date(),
+    0,
+
+
+    )
+    this.mySnap1 = new FaceSnap(
+      'my snaps1',
+    'my descriptions1',
+    'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+    new Date(),
+    0,
+
+
+    )
+    this.mySnap2 = new FaceSnap(
+      'my snaps2',
+    'my descriptions2',
     'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
     new Date(),
     0,

@@ -11,26 +11,23 @@ import { FaceSnap } from '../models/face-snap.model';
 export class FaceSnapComponent implements OnInit {
 
     @Input() faceSnap!: FaceSnap;
-    title!:string;
-    description!:string;
-    createdDate!:Date;
-    snaps!: number;
-    urlImage!: string;
+ 
     button!: string;
     
   
 
     ngOnInit()
     {
+      this.button = "like";
     }
 
     onSnap(){
       if (this.button == 'like') {
-        this.snaps++;
+        this.faceSnap.snaps++;
   
         this.button = 'unlike';
       }else
-      {this.snaps--;
+      {this.faceSnap.snaps--;
 
       this.button = 'like';}
       
