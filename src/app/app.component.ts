@@ -9,39 +9,56 @@ import { FaceSnap } from './models/face-snap.model';
 })
 export class AppComponent implements OnInit{
 
-  mySnap!: FaceSnap;
-  mySnap1!: FaceSnap;
-  mySnap2!: FaceSnap;
+  myFaceSnaps! : FaceSnap[];
   ngOnInit()
+  { this.myFaceSnaps = [
+    {
+    title: 'Archibald',
+    description: 'Mon meilleur ami depuis tout petit !',
+    imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+    createdDate: new Date(),
+    snaps: 0,
+    location: 'Alger'
+  },
   {
-    this.mySnap = new FaceSnap(
-      'my snaps',
-    'my descriptions',
-    'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    new Date(),
-    0,
-
-
-    )
-    this.mySnap1 = new FaceSnap(
-      'my snaps1',
-    'my descriptions1',
-    'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    new Date(),
-    0,
-
-
-    )
-    this.mySnap2 = new FaceSnap(
-      'my snaps2',
-    'my descriptions2',
-    'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    new Date(),
-    0,
-
-
-    )
+    title: 'Three Rock Mountain',
+    description: 'Un endroit magnifique pour les randonnées.',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+    createdDate: new Date(),
+    snaps: 0,
+    location: 'Constantine'
+  },
+  {
+    title: 'Three Rock Mountain',
+    description: 'Un endroit magnifique pour les randonnées.',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+    createdDate: new Date(),
+    snaps: 0,
+    location: 'Constantine'
+  },{
+    title: 'Three Rock Mountain',
+    description: 'Un endroit magnifique pour les randonnées.',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+    createdDate: new Date(),
+    snaps: 0,
+    location: 'Constantine'
+  },{
+    title: 'Three Rock Mountain',
+    description: 'Un endroit magnifique pour les randonnées.',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+    createdDate: new Date(),
+    snaps: 0,
+    location: 'Constantine'
+  },
+  {
+    title: 'Un bon repas',
+    description: 'Mmmh que c\'est bon !',
+    imageUrl: 'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
+    createdDate: new Date(),
+    snaps: 0
   }
+];
+     }
  
 
 }
