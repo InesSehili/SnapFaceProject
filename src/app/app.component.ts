@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {interval, map, Observable, tap} from "rxjs";
+import {filter} from "rxjs/operators";
 
 
 
@@ -9,10 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
-  
+  interval$!: Observable<string>;
   ngOnInit()
-  { 
-     }
- 
+  { //on a utiliser cette methode pour créer un observable qui emet des nombres croissants, en passant le nombre de
+    // milliseconde qui doit separer les emissions
+    //const interval$ = interval(1000);
+    //interval$.subscribe(value => console.log(value));
+    //setTimeout(() => {interval$.subscribe(value => console.log(value));}, 5000);
 
+    //this.interval$ = interval(1000);
+
+    this.interval$ = interval(1000).pipe(
+      filter(value => value % 3 === 0),
+      map(value => value % 2 === 0 ?
+        `Je suis ${value} et je suis pair` :
+        `Je suis ${value} et je suis impair`
+      ),
+      tap(text => this.logger(text))
+    );
+
+
+
+
+
+
+  }
+
+
+  logger(text: string): void {
+    console.log(`Log: ${text}`);
+  }
 }

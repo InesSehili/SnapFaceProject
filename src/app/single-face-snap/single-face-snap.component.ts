@@ -16,7 +16,7 @@ export class SingleFaceSnapComponent implements OnInit {
   }
 
 
-  @Input() faceSnap!: FaceSnap;
+  faceSnap!: FaceSnap;
 
   button!: string;
 
