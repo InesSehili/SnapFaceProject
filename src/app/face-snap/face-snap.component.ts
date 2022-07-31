@@ -25,8 +25,7 @@ export class FaceSnapComponent implements OnInit {
 
 
     ngOnInit()
-    {  const snapId = +this.route.snapshot.params['id'];
-      this.faceSnap = this.faceSnapService.getFaceSnapById(snapId);
+    {
       this.button = "like";
     }
 
@@ -44,6 +43,6 @@ export class FaceSnapComponent implements OnInit {
 
 
   onViewFaceSnap() {
-    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
+    this.router.navigateByUrl(`facesnap/${this.faceSnap.id}`);
   }
 }

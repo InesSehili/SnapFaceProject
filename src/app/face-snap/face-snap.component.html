@@ -1,7 +1,7 @@
 
 <div class="face-snap-card" [ngClass]="{ snapped: button === 'Oops, unSnap!' }">
   <h2>{{ faceSnap.title | uppercase }}</h2>
-  <a routerLink="/facesnaps">Back</a>
+
   <p>{{ faceSnap.description }}</p>
   <button (click)="onViewFaceSnap()">VIEW</button>
 </div>
