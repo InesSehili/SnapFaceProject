@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-landing-page',
@@ -8,12 +9,16 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
 
-  
+  userEmail= "salam";
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   onContinue()
   { this.router.navigateByUrl('facesnaps');}
+
+  onSubmitForm(form : NgForm) {
+    console.log(form);
+  }
 
 }
