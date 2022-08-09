@@ -1,5 +1,9 @@
 
-<div class="face-snap-card" [ngClass]="{'snapped' : button === 'unlike'  }">
+
+<div class="face-snap-card" *ngIf=" faceSnap$ | async as faceSnap " [ngClass]="{'snapped' : button === 'unlike'  }">
+<!--  <p> {{0.366558 |number : '1.0-2'}}</p>
+  <P> {{0.258 |percent : '1.0-1' }}</P>
+  <p>{{ 344.36 | currency : 'EUR'  }}</p>-->
 
   <h2>{{ faceSnap.title | titlecase }}</h2>
   <a routerLink="/facesnaps">Back</a>
