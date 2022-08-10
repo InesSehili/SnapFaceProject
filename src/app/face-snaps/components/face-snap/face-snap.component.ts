@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-import { FaceSnap } from '../models/face-snap.model';
-import { FaceSnapsService } from "../services/face-snaps.service";
+import { FaceSnap } from '../../../core/models/face-snap.model';
+import { FaceSnapsService } from "../../../core/services/face-snaps.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -31,11 +31,11 @@ export class FaceSnapComponent implements OnInit {
 
     onSnap(){
       if (this.button == 'like') {
-        this.faceSnapService.Onsnap(this.faceSnap.id, 'like');
+        this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'like');
 
         this.button = 'unlike';
       }else
-      { this.faceSnapService.Onsnap(this.faceSnap.id, 'unlike');
+      { this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'unlike');
 
       this.button = 'like';}
 
@@ -43,6 +43,6 @@ export class FaceSnapComponent implements OnInit {
 
 
   onViewFaceSnap() {
-    this.router.navigateByUrl(`facesnap/${this.faceSnap.id}`);
+    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
   }
 }

@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FaceSnapsService} from "../services/face-snaps.service";
-import {FaceSnap} from "../models/face-snap.model";
+import {FaceSnapsService} from "../../../core/services/face-snaps.service";
+import {FaceSnap} from "../../../core/models/face-snap.model";
 import {ActivatedRoute, Router} from "@angular/router";
-import {AppRoutingModule} from "../app-routing.module";
-import {Observable} from "rxjs";
+import {AppRoutingModule} from "../../../app-routing.module";
+import {Observable, tap} from "rxjs";
 
 @Component({
   selector: 'app-single-face-snap',
@@ -28,9 +28,28 @@ export class SingleFaceSnapComponent implements OnInit {
     this.button = "like";
   }
 
-  onSnap(){
+  onSnap(faceSnapId: number) {
+    if (this.button === 'like') {
+      this.faceSnap$ = this.faceSnapService.snapFaceSnapById(faceSnapId, 'like').pipe(
+        tap(() =>
+          this.button = 'unlike'
 
 
+        ));
+
+
+
+    } else {
+
+      this.faceSnap$ = this.faceSnapService.snapFaceSnapById(faceSnapId, 'unlike').pipe
+      (
+        tap( () =>
+          this.button = 'like'
+        )
+      )
+
+
+    }
   }
 
 
